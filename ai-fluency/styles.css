@@ -6,3 +6,4 @@
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 @media(max-width:700px){.sidebar-bottom{display:block;padding:8px 3px 0;margin:0}.sidebar-bottom p,.sidebar-bottom .text-button{display:none}.progress-label{font-size:10px}.sidebar-bottom progress{height:3px;margin:6px 0 0}}
 @media print{.sidebar,.topbar,.site-footer,.button,.lesson-footer,.week-tabs,#reset-dialog{display:none}.workspace{margin:0}main{padding:0}.quiz,.rubric,.rung{break-inside:avoid}body{background:white;color:black}}
+@media(max-width:700px){.topbar{gap:10px}.topbar>span{font-size:7px;letter-spacing:0}.topbar a{font-size:9px}.topbar a span{margin-left:3px}}

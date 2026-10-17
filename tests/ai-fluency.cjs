@@ -32,10 +32,10 @@ const server = createServer(async (request, response) => {
     const page = await context.newPage();
     page.on('pageerror', error => errors.push(error.message));
     page.on('response', response => { if (response.status() >= 400) errors.push(`${response.status()} ${response.url()}`); });
-    await page.goto(`${base}/`);
+    await page.goto(`${base}/ai-fluency/`);
     await page.getByRole('heading', { name: /From aware/ }).waitFor();
     await page.screenshot({ path: '/tmp/ai-fluency-desktop.png', fullPage: true });
-    passed('Repository root serves the course; local assets load');
+    passed('Course subpath serves the learning experience; local assets load');
 
     await page.getByRole('link', { name: 'Start learning' }).click();
     await page.getByText('Licenses were purchased for every marketer.', { exact: true }).click();
@@ -130,10 +130,10 @@ const server = createServer(async (request, response) => {
 
     await page.setViewportSize({ width: 390, height: 844 });
     for (const id of ['overview', 'why-fluency', 'capability-ladder', 'six-week-cohort', 'governance', 'your-next-step']) {
-      await page.goto(`${base}/#${id}`);
+      await page.goto(`${base}/ai-fluency/#${id}`);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `Horizontal overflow on ${id}`);
     }
-    await page.goto(`${base}/`);
+    await page.goto(`${base}/ai-fluency/`);
     await page.screenshot({ path: '/tmp/ai-fluency-mobile.png', fullPage: true });
     passed('All six screens fit a 390px mobile viewport');
 
@@ -143,7 +143,7 @@ const server = createServer(async (request, response) => {
     });
     const restrictedPage = await restrictedContext.newPage();
     restrictedPage.on('pageerror', error => errors.push(error.message));
-    await restrictedPage.goto(`${base}/#your-next-step`);
+    await restrictedPage.goto(`${base}/ai-fluency/#your-next-step`);
     await restrictedPage.locator('.storage-warning').waitFor();
     await restrictedPage.locator('#action-plan').fill('A plan still works without storage.');
     assert.match(await restrictedPage.locator('#save-note').innerText(), /unavailable/);
