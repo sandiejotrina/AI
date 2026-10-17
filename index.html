@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153b3b">
+  <meta name="description" content="An interactive learning experience for marketing teams: build AI fluency through practical workflows, human review, and measurable outcomes.">
+  <title>AI Fluency for Marketing Teams · Sandie Dela Cruz</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="course.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson</a>
+  <aside class="sidebar" aria-label="Course navigation">
+    <a class="brand" href="#overview" aria-label="AI Fluency course overview"><span class="brand-mark" aria-hidden="true">a<span>i</span></span><span>THE CAPABILITY SERIES<small>Learning with Sandie Dela Cruz</small></span></a>
+    <div class="course-label">YOUR LEARNING PATH</div>
+    <nav id="lesson-nav" aria-label="Lessons"></nav>
+    <div class="sidebar-bottom">
+      <div class="progress-label"><span>Your progress</span><strong id="progress-count">0 of 4</strong></div>
+      <progress id="course-progress" max="4" value="0" aria-label="Lessons completed"></progress>
+      <p>Small steps. Lasting capability.</p>
+      <button class="text-button" id="reset-progress">Reset progress</button>
+    </div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>AI FLUENCY <span class="topbar-divider">/</span> MARKETING TEAMS</span><a href="mailto:sandiejotrina@gmail.com">Talk to Sandie <span aria-hidden="true">→</span></a></header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="site-footer"><span>Designed by Sandie Dela Cruz</span><span>Illustrative portfolio sample · Not Amgen material</span></footer>
+  </div>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">Start fresh?</h2><p>This removes this course’s progress, answers, and action plan from this browser.</p><div class="button-row"><button class="button secondary" id="cancel-reset">Keep learning</button><button class="button" id="confirm-reset">Reset course</button></div></dialog>
+</body>
+</html>
